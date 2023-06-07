@@ -1,0 +1,305 @@
+.template3_v1 {
+  font-size: 50px;
+  height: 100%;
+}
+
+.template3_v1 .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 4px solid #d7037e;
+}
+
+.template3_v1 .list1 .circle {
+
+}
+
+.template3_v1 .option {
+  cursor: pointer;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  line-height: 1.6;
+}
+
+.template3_v1 .question .queClick {
+
+  z-index: 2;
+  text-align: center;
+}
+
+
+.template3_v1 .question {
+  z-index: 2;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.template3_v1 .list1 {
+  overflow: hidden;
+}
+
+.template3_v1 .list2 {
+}
+
+.template3_v1 .lines {
+
+}
+
+.template3_v1 .selected {
+  background-color: #6FB54B;
+}
+
+.template3_v1 .line {
+  stroke: #6FB54B;
+  stroke-width: 4;
+  display: none;
+}
+
+.template3_v1 .itemContainer {
+  display: grid;
+  grid-template-columns: 50% 31% 16%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0px;
+  background-image: url('../../images/7207783.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.template3_v1 .showAnswerTickMark,
+.template3_v1 .showAnswerCrossMark {
+  text-align: center;
+  display: none;
+  font-size: 16px;
+}
+.flex-2{
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  
+}
+.template3_v1 .showAnswerCrossMark {
+  animation-name: crossBlinker;
+  animation-duration: 1s;
+  opacity: 0;
+}
+
+@keyframes crossBlinker {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.template3_v1 .line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash .5s linear alternate;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+.pagePopup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 2;
+}
+
+.pagePopupContainer {
+  position: relative;
+  width: 1230px;
+  height: 730px;
+  background-color: #fff;
+  border: 5px solid #6FB54B;
+  border-radius: 20px;
+  padding: 20px;
+  position: fixed;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pagePopup .col-xs-12 {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.pagePopup .popup-content {
+  width: 100%;
+  height: 100%;
+}
+
+.pagePopup .popupTextBox {
+  font-size: 140px;
+  margin-right: 100px;
+  line-height: 1;
+}
+
+.pagePopup .popup-content .content {
+  margin-top: 10px;
+}
+
+.pagePopup .textBox {
+  font-size: 70px;
+  text-align: center;
+  border: 2px solid #7d51a1;
+  border-radius: 20px;
+  padding: 10px 25px 10px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1;
+  margin-left: 15px;
+}
+
+.pagePopup .audio_Icon {
+  cursor: pointer;
+}
+
+.pagePopup .popupBottomContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.pagePopup .popupBottomContent .imgContainer {
+  display: inline-block;
+}
+
+.pagePopup .carouselLeft,
+.pagePopup .carouselRight {
+  position: absolute;
+  top: 302px;
+}
+
+.pagePopup .carouselLeft {
+  left: 5px;
+}
+
+.pagePopup .carouselRight {
+  right: 5px;
+}
+
+.opacity {
+  opacity: 0.6;
+}
+
+.showAnswerCrossMark1 {
+  position: absolute;
+  top: 103px;
+  right: 8px;
+}
+
+.showAnswerCrossMark3 {
+  position: absolute;
+  top: 248px;
+  right: 8px;
+}
+
+.showAnswerCrossMark4 {
+  position: absolute;
+  top: 403px;
+  right: 8px;
+}
+.showAnswerCrossMark2 {
+  position: absolute;
+  top: 553px;
+  right: 8px;
+}
+
+.carousel-inner .item {
+  height: 100%;
+}
+
+.clickableBox img {
+  width: 80%;
+
+}
+
+.pagePopup .popup-content .content {
+  display: flex;
+  height: 100%;
+  /* margin-top: 10px; */
+  align-items: center;
+  align-content: center;
+}
+
+html {
+  font-size: unset;
+}
+
+.yp-player__header-badge {
+  font-family: "AronuiB" !important;
+  font-size: 55px !important;
+  display: inline-block;
+  vertical-align: middle !important;
+  width: 52px;
+  margin-right: 0;
+}
+
+.boxhead5 {
+  width: 95%;
+  display: inline-block;
+  margin: 1% 0%;
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.reloadBtnAll {
+  margin-top: 13px;
+}
+
+.showAnsBtn {
+  width: 320px;
+  position: absolute;
+  top: 35px;
+  right: 37px;
+}
+
+.pointer-none {
+  pointer-events: none;
+}
+
+@-moz-document url-prefix() {
+
+}

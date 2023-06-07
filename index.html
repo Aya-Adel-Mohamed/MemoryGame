@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="js/lib/jquery.js"></script>
+  <script>
+    $(window).load(function () {
+      $(".loader").fadeOut("slow");
+    });
+  </script>
+  <style>
+    .loader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url("js/lib/preloader.gif") 50% 50% no-repeat rgb(255, 255, 255);
+    }
+  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <title>Educational RC</title>
+
+  <!-- global CSS Starts -->
+  <link rel="stylesheet" href="css/lib/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+  <link rel="stylesheet" href="css/template/p19_ex21.css" type="text/css" />
+
+  <!-- global CSS End -->
+
+  <!-- global JS Starts -->
+  <script src="js/lib/jquery_v3.3.1.js"></script>
+  <script src="js/lib/bootstrap.min.js"></script>
+  <script src="js/lib/underscore-min.js"></script>
+  <!-- global JS End -->
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="container">
+    <div class="page_content">
+      <div class="container-fluid noPadding">
+        <!-- header start -->
+        <div class="col-xs-12 noPadding header">
+          <h1 class="boxhead5 headingTitle boldFs">
+           Memory Game
+          </h1>
+
+          <div class="box1 hidden">
+            <div class="resourseBtn queBox queBox_1" id="imgBox_1">
+              <div class="clickableBox">
+                <img src="" style="width: 100px" class="img-responsive"
+                  class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Resource" />
+              </div>
+            </div>
+          </div>
+
+          <div class="box1 pull-right helpBtn hide">
+            <img src="" class="img-responsive" />
+          </div>
+        </div>
+        <audio id="audioPlayer1" preload="auto" src="./audio/correct.mp3"></audio>
+        <audio id="audioPlayer2" preload="auto" src="./audio/incorrect.mp3"></audio>
+        <!-- header end -->
+
+        <!-- page start -->
+        <section class="col-xs-12 pageContainer">
+          <div class="pageBg col-xs-12"></div>
+          <div class="pageContent col-xs-12">
+            <div id="myCarousel" class="carousel slide col-xs-12 template3_v1" data-ride="carousel" data-interval="0"
+              data-wrap="false" data-id="template3_v1">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active" data-audioSrc="./audio/correct.mp3">
+                  <div class="itemContainer">
+                    <div class="wrapper hide">
+    
+                      <div class="stats-container">
+                        <div id="moves-count"></div>
+                        <div id="time"></div>
+                      </div>
+                      <div class="game-container"></div>
+                      <button id="stop" class="hide">Stop Game</button>
+                    </div>
+                    <div class="controls-container">
+                  <div class="win dnone ">  
+                    <img src="./images/win.png" alt="">  
+                    <p id="result">you win</p></div>
+                    
+                      <button id="start">Start
+                        <img src="./images/2.png" alt="" class="img-start pointer-none" >
+                      </button>
+                 
+                      
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- page end -->
+
+        <!-- footer start -->
+        <div class="row">
+          <div class="col-xs-12 footer" style="height: 124.8px">
+            <div class="box1" style="position: relative; top: 2px; left: 9px">
+              <div class="reloadBtnAll">
+                <img src="./images/replay_icon.png" class="img-responsive" />
+              </div>
+            </div>
+            <div class="box3" style="visibility: hidden">
+              <div class="audioPlayerContainer" id="audioDragContainer">
+                <div class="col-xs-12 controlsDiv">
+                  <div class="controlsinline">
+                    <div id="pButton" class="col-xs-1 noPadding">
+                      <img src="" class="img-responsive playImg"
+                        onclick="fnStartAudio('play');" />
+                      <img src="" class="img-responsive pauseImg"
+                        onclick="fnStartAudio('pause');" style="display: none" />
+                    </div>
+                    <div class="col-xs-11" id="audioDrag">
+                      <div class="slidecontainer">
+                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange" step="0.1" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="box2 hide">
+              <div class="showAnsBtn">
+                <img src="" class="img-responsive" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer end -->
+
+        <div class="resoursePopup pagePopup popup_1" style="display: none">
+          <div class="resourseContainer">
+            <div class="pagePopupContainer">
+              <img class="closeBtn" src="" style="width: 65px" class="btn btn-secondary"
+                data-toggle="tooltip" data-placement="top" title="Close" />
+              <div class="col-xs-12 noPadding">
+                <div class="popup-content">
+                  <div id="popupSlider_1" style="height: 100%" class="carousel slide popupSlider" data-ride="carousel"
+                    data-interval="false">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="item item_1">
+                        <div class="content">
+                          <div class="clickableBox">
+                            <img class="center-block" src="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item item_2">
+                        <div class="content">
+                          <div class="clickableBox">
+                            <img class="center-block" src="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item item_3">
+                        <div class="content">
+                          <div class="clickableBox">
+                            <img class="center-block" src="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item item_4">
+                        <div class="content">
+                          <div class="clickableBox">
+                            <img class="center-block" src="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item item_5">
+                        <div class="content">
+                          <div class="clickableBox">
+                            <img class="center-block" src="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="item item_6">
+                        <div class="content">
+                          <div class="clickableBox">
+                            <img class="center-block" src="" />
+                          </div>
+                        </div>
+                      </div>
+
+                
+                    </div>
+                    <!-- Left and right controls -->
+                    <a class="carouselLeft disabled pointer-none" href="#popupSlider_1" data-slide="prev"
+                      class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Previous"><img
+                        class="" src="" style="width: 100px" /></a>
+                    <a class="carouselRight" href="#popupSlider_1" data-slide="next" class="btn btn-secondary"
+                      data-toggle="tooltip" data-placement="top" title="Next"><img class=""
+                        src="" style="width: 100px" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="helpPopup" style="display: none">
+            <div class="helpContainer">
+              <img class="closeBtn" src="" />
+              <div class="col-xs-12" style="
+                    overflow: auto;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 30px;
+                  ">
+                <p>Help content goes here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(function () {
+      fnSetPlayer();
+      fnTemplate3_v1($("div.active"));
+    });
+  </script>
+  <script type="text/javascript" src="js/template/p19_ex21.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
